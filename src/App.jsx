@@ -1,15 +1,63 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Domains from './components/Domains';
-import Framework from './components/Framework';
+import ApolloHeader from './components/ApolloHeader';
+import ApolloHero from './components/ApolloHero';
+import Highlights from './components/Highlights';
+import ApolloFooter from './components/ApolloFooter';
 
-function Home({ onJoin }) {
+function Home({ onApply }) {
   return (
     <div>
-      <Hero />
-      <Framework onJoin={onJoin} />
-      <Domains onJoin={onJoin} />
+      <ApolloHero onApply={onApply} />
+      <div id="highlights">
+        <Highlights />
+      </div>
+    </div>
+  );
+}
+
+function Apply() {
+  return (
+    <div className="max-w-3xl mx-auto px-4 py-16">
+      <h2 className="text-3xl font-bold text-gray-900">Apply to Apollo University</h2>
+      <p className="mt-2 text-gray-700">Admissions open for UG, PG, and Doctoral programs. Fill the form below to get a callback from our admissions team.</p>
+      <form className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Full Name</label>
+          <input type="text" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Jane Doe" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="jane@example.com" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Phone</label>
+          <input type="tel" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="+91XXXXXXXXXX" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Program Interested</label>
+          <select className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            <option>Undergraduate</option>
+            <option>Postgraduate</option>
+            <option>Doctoral</option>
+          </select>
+        </div>
+        <div className="sm:col-span-2">
+          <label className="block text-sm font-medium text-gray-700">Message</label>
+          <textarea className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" rows={4} placeholder="Tell us about your interests" />
+        </div>
+        <div className="sm:col-span-2">
+          <button type="button" className="w-full px-6 py-3 rounded-md bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition">Request Callback</button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+function Profile() {
+  return (
+    <div className="max-w-3xl mx-auto px-4 py-16">
+      <h2 className="text-3xl font-bold text-gray-900">Your Profile</h2>
+      <p className="mt-2 text-gray-700">Sign in to view your application status and personalized recommendations.</p>
     </div>
   );
 }
@@ -19,22 +67,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      <Header onNavigate={setRoute} />
+      <ApolloHeader onNavigate={setRoute} />
       <main className="pt-16">
-        {route === 'home' && <Home onJoin={() => setRoute('enroll')} />}
-        {route === 'enroll' && (
-          <div className="max-w-3xl mx-auto px-4 py-12">
-            <h2 className="text-2xl font-bold">Enrollment Coming Next</h2>
-            <p className="mt-2 text-gray-600">This prototype shows the landing experience and the CCE certification framework. We will add full registration, domain selection, and profile tracking next.</p>
-          </div>
-        )}
-        {route === 'profile' && (
-          <div className="max-w-3xl mx-auto px-4 py-12">
-            <h2 className="text-2xl font-bold">Profile</h2>
-            <p className="mt-2 text-gray-600">Your personalized dashboard will appear here.</p>
-          </div>
-        )}
+        {route === 'home' && <Home onApply={() => setRoute('apply')} />}
+        {route === 'apply' && <Apply />}
+        {route === 'profile' && <Profile />}
       </main>
+      <ApolloFooter />
     </div>
   );
 }
