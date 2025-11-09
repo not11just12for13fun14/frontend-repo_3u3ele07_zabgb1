@@ -23,19 +23,19 @@ function Apply() {
       <form className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">Full Name</label>
-          <input type="text" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Jane Doe" />
+          <input type="text" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="Jane Doe" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Email</label>
-          <input type="email" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="jane@example.com" />
+          <input type="email" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="jane@example.com" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Phone</label>
-          <input type="tel" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="+91XXXXXXXXXX" />
+          <input type="tel" className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" placeholder="+91XXXXXXXXXX" />
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700">Program Interested</label>
-          <select className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <select className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600">
             <option>Undergraduate</option>
             <option>Postgraduate</option>
             <option>Doctoral</option>
@@ -43,10 +43,10 @@ function Apply() {
         </div>
         <div className="sm:col-span-2">
           <label className="block text-sm font-medium text-gray-700">Message</label>
-          <textarea className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" rows={4} placeholder="Tell us about your interests" />
+          <textarea className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-600" rows={4} placeholder="Tell us about your interests" />
         </div>
         <div className="sm:col-span-2">
-          <button type="button" className="w-full px-6 py-3 rounded-md bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition">Request Callback</button>
+          <button type="button" className="w-full px-6 py-3 rounded-md bg-indigo-700 text-white font-semibold hover:bg-indigo-800 transition">Request Callback</button>
         </div>
       </form>
     </div>
